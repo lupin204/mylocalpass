@@ -1,15 +1,54 @@
 import Vue from 'vue'
-import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
+import VueRouter from 'vue-router'
+import Home from '../components/Home.vue'
+import Login from '../components/Login.vue'
+import Board from '../components/Board.vue'
+import Card from '../components/Card.vue'
+import NotFound from '../components/NotFound.vue'
+import ExcelTemplate from '../components/ExcelTemplate.vue'
+import store from '../store'
 
-Vue.use(Router)
+// 미들웨어 설정
+Vue.use(VueRouter)
 
-export default new Router({
+// 라우터 beforeEnter 에서 token 체크 - localStorage에 저장된 token 없으면 로그인페이지로 이동
+// const requireAuth = () => (from, to, next) => {
+//   const loginPath = `/login?returnPath=${encodeURIComponent(from.path)}`
+//   !!store.state.accessToken ? next() : next(loginPath)
+// }
+
+// vue-router
+const router = new VueRouter({
+  mode: 'history', // not 'hashbang mode' but 'history mode'
   routes: [
     {
       path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
+      component: Home
+      // beforeEnter: requireAuth()
+    },
+    {
+      path: '/export',
+      component: ExcelTemplate
+    },
+    // {
+    //     path: '/login',
+    //     component: Login
+    // },
+    {
+      path: '/board/:id',
+      component: Board,
+      // beforeEnter: requireAuth(),
+      children: [{
+        path: 'card/:cid',
+        component: Card
+      }]
+    },
+
+    {
+      path: '*',
+      component: NotFound
     }
   ]
 })
+
+export default router
