@@ -7,12 +7,15 @@
 
     <div slot="body">
       <h4>Key</h4>
+      <input class="form-control" type="text" :value="card.key" ref="inputKey">
+      <h4>Value</h4>
+      <input class="form-control" type="text" :value="card.value" ref="inputValue">
+      <!-- <h4>Key</h4>
       <input class="form-control" type="text" :value="card.key" :readonly="!toggleKey" 
       @click.prevent="toggleKey=!toggleKey" @blur="onBlurInputKey" ref="inputKey">
       <h4>Value</h4>
       <input class="form-control" type="text" :value="card.value" :readonly="!toggleValue" 
-      @click.prevent="toggleValue=!toggleValue" @blur="onBlurInputValue" ref="inputValue">
-
+      @click.prevent="toggleValue=!toggleValue" @blur="onBlurInputValue" ref="inputValue"> -->
       <!-- <textarea class="form-control" cols="30" rows="3" placeholder="Add a more detailed description..."
       :readonly="!toggleDesc" @click.prevent="toggleDesc=!toggleDesc" @blur="onBlurInputDesc"
       v-model="card.description" ref="inputDesc"></textarea> -->
@@ -33,8 +36,8 @@ export default {
   props: ['boardId'],
   data() {
     return {
-      toggleKey: false,
-      toggleValue: false
+      // toggleKey: false,
+      // toggleValue: false
     };
   },
   computed: {
@@ -62,11 +65,12 @@ export default {
       const value = this.$refs.inputValue.value.trim()
       if (!value) return
       this.UPDATE_CARD({ id: this.card.id, key, value })
-        .then(_ => onClickClose())
+        .then(_ => this.$router.push(`/board/${this.boardId}`))
     },
     onBlurInputKey() {
       this.toggleKey = !this.toggleKey
-      this.$refs.inputKey.value = 'bbb'
+      const key = this.$refs.inputKey.value.trim()
+      if (!key) return
     },
     onBlurInputValue() {
       this.toggleValue = !this.toggleValue
