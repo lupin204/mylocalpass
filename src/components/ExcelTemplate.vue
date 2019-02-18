@@ -7,7 +7,9 @@
       Download Data To CSV
     </download-excel>
     <hr/>
-    <button class="btn btn-success" @click="uploadData">Upload Data From data.json</button>
+    <button class="btn btn-success" @click="uploadDataFromJson">Upload Data From Json</button>
+    <hr/>
+    <button class="btn btn-success" @click="downloadDataToJson">Download Data To Json</button>
   </div>
 </template>
 
@@ -117,11 +119,41 @@ export default {
       })
       return cards
     },
-    uploadData() {
-      debugger
+    uploadDataFromJson() {
       stor.setBoards(this.importedJsonBoards)
       stor.setLists(this.importedJsonLists)
       stor.setCards(this.importedJsonCards)
+    },
+    downloadDataToJson() {
+      const boards = localStorage.getItem('boards')
+      const blob1 = new Blob([boards], { type: 'text/plain' })
+      const e1 = document.createEvent('MouseEvents')
+      let a1 = document.createElement('a')
+      a1.download = 'boards.json'
+      a1.href = window.URL.createObjectURL(blob1)
+      a1.dataset.downloadurl = ['text/json', a1.download, a1.href].join(':')
+      e1.initEvent('click', true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null)
+      a1.dispatchEvent(e1)
+
+      const lists = localStorage.getItem('lists')
+      const blob2 = new Blob([lists], { type: 'text/plain' })
+      const e2 = document.createEvent('MouseEvents')
+      let a2 = document.createElement('a')
+      a2.download = 'lists.json'
+      a2.href = window.URL.createObjectURL(blob2)
+      a2.dataset.downloadurl = ['text/json', a2.download, a2.href].join(':')
+      e2.initEvent('click', true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null)
+      a2.dispatchEvent(e2)
+
+      const cards = localStorage.getItem('cards')
+      const blob3 = new Blob([cards], { type: 'text/plain' })
+      const e3 = document.createEvent('MouseEvents')
+      let a3 = document.createElement('a')
+      a3.download = 'cards.json'
+      a3.href = window.URL.createObjectURL(blob3)
+      a3.dataset.downloadurl = ['text/json', a3.download, a3.href].join(':')
+      e3.initEvent('click', true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null)
+      a3.dispatchEvent(e3)
     }
   }
 };
