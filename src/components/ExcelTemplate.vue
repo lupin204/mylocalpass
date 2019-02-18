@@ -6,6 +6,8 @@
     <download-excel class="btn btn-success" :fetch="fetchData" :fields="json_fields" type="csv" name="mypass-data.csv">
       Download Data To CSV
     </download-excel>
+    <hr/>
+    <button class="btn btn-success" @click="uploadData">Upload Data From data.json</button>
   </div>
 </template>
 
@@ -15,12 +17,19 @@ import JsonExcel from 'vue-json-excel'
 import { stor } from '../api/model.js'
 import { board, list, card } from '../api'
 
+import jsonBoards from '../assets/data/boards.json'
+import jsonLists from '../assets/data/lists.json'
+import jsonCards from '../assets/data/cards.json'
+
 export default {
   components: {
     'downloadExcel': JsonExcel
   },
   data() {
     return {
+      importedJsonBoards: jsonBoards,
+      importedJsonLists: jsonLists,
+      importedJsonCards: jsonCards,
       json_fields: {
         'Board Id': 'boardId',
         'Board': 'board',
@@ -107,6 +116,12 @@ export default {
         })
       })
       return cards
+    },
+    uploadData() {
+      debugger
+      stor.setBoards(this.importedJsonBoards)
+      stor.setLists(this.importedJsonLists)
+      stor.setCards(this.importedJsonCards)
     }
   }
 };

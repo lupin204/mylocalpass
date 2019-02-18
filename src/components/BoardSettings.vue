@@ -10,10 +10,10 @@
       </li>
       <li>Change Background</li>
       <div class="color-picker">
-        <a href data-value="rgb(0,121,191)" @click.prevent="onClickChangeColor"></a>
-        <a href data-value="rgb(210,144,52)" @click.prevent="onClickChangeColor"></a>
-        <a href data-value="rgb(81,152,57)" @click.prevent="onClickChangeColor"></a>
-        <a href data-value="rgb(176,70,50)" @click.prevent="onClickChangeColor"></a>
+        <a href data-value="rgb(0,121,191)" @click.prevent="onClickChangeColor"></a><!--rgb(0,121,191) #0079BF-->
+        <a href data-value="rgb(210,144,52)" @click.prevent="onClickChangeColor"></a><!--rgb(210,144,52) #D29034-->
+        <a href data-value="rgb(81,152,57)" @click.prevent="onClickChangeColor"></a><!--rgb(81,152,57) #519839-->
+        <a href data-value="rgb(176,70,50)" @click.prevent="onClickChangeColor"></a><!--rgb(176,70,50) #B04632-->
       </div>
     </ul>
   </div>

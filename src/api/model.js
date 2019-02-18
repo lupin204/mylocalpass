@@ -17,6 +17,15 @@ const stor = {
   getCards: () => {
     return getJsonFromStorage('cards')
   },
+  setBoards: (boards) => {
+    setJsonToStorage('boards', boards)
+  },
+  setLists: (lists) => {
+    setJsonToStorage('lists', lists)
+  },
+  setCards: (cards) => {
+    setJsonToStorage('cards', cards)
+  },
   getBoard: (boardId) => {
     let boardArrays = stor.getBoards()
     let board = boardArrays.find(el => el.id == boardId)
@@ -126,14 +135,10 @@ const setJsonToStorage = function (key, json) {
 
 // init models
 class Board {
-  constructor({
-    id,
-    title,
-    bgColor
-  }) {
-    this.id = id ? id : stor.getBoards().length + 1
-    this.title = title ? title : ''
-    this.bgColor = bgColor ? bgColor : 'rgb(0, 121, 191)'
+  constructor(id, title, bgColor) {
+    this.id = id || stor.getBoards().length + 1
+    this.title = title || ''
+    this.bgColor = bgColor || '#0079BF' // 'rgb(0, 121, 191)'
   }
 }
 class List {
@@ -143,10 +148,10 @@ class List {
     pos,
     boardId
   }) {
-    this.id = id ? id : stor.getLists().length + 1
-    this.title = title ? title : ''
-    this.pos = pos ? pos : 65535
-    this.boardId = boardId ? boardId : 1
+    this.id = id || stor.getLists().length + 1
+    this.title = title || ''
+    this.pos = pos || 65535
+    this.boardId = boardId || 1
   }
 }
 class Card {
