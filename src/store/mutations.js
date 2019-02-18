@@ -13,24 +13,24 @@ const mutations = {
   //   delete localStorage.accessToken      // localStorage의 token 삭제
   //   setAuthInHeader(null)                // request header token 삭제
   // },
-  SET_BOARD_LIST(state, { list }) {
+  SET_BOARD_LIST (state, { list }) {
     state.boardList = list.map(board => board)
   },
-  SET_BOARD(state, { item }) {
+  SET_BOARD (state, { item }) {
     state.board = item
   },
-  SET_IS_ADD_BOARD(state, toggle) {
+  SET_IS_ADD_BOARD (state, toggle) {
     state.isAddBoard = toggle
   },
-  SET_CARD(state, card) {
+  SET_CARD (state, card) {
     state.card = card
     console.log(state.card)
   },
-  SET_THEME(state, color) {
-    state.bodyColor = color ? color : 'rgb(255,255,255)'
+  SET_THEME (state, color) {
+    state.bodyColor = color || 'rgb(255,255,255)'
     state.navbarColor = color ? 'rgba(0,0,0,.15)' : '#026aa7'
   },
-  SET_IS_SHOW_BOARD_MENU(state, toggle) {
+  SET_IS_SHOW_BOARD_MENU (state, toggle) {
     state.isShowBoardMenu = toggle
   }
 }

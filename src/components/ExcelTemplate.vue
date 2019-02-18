@@ -125,6 +125,7 @@ export default {
       stor.setCards(this.importedJsonCards)
     },
     downloadDataToJson() {
+      // localStorage.boards ==[download]==> boards.json
       const boards = localStorage.getItem('boards')
       const blob1 = new Blob([boards], { type: 'text/plain' })
       const e1 = document.createEvent('MouseEvents')
@@ -135,6 +136,7 @@ export default {
       e1.initEvent('click', true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null)
       a1.dispatchEvent(e1)
 
+      // localStorage.lists ==[download]==> lists.json
       const lists = localStorage.getItem('lists')
       const blob2 = new Blob([lists], { type: 'text/plain' })
       const e2 = document.createEvent('MouseEvents')
@@ -145,6 +147,7 @@ export default {
       e2.initEvent('click', true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null)
       a2.dispatchEvent(e2)
 
+      // localStorage.cards ==[download]==> cards.json
       const cards = localStorage.getItem('cards')
       const blob3 = new Blob([cards], { type: 'text/plain' })
       const e3 = document.createEvent('MouseEvents')

@@ -135,19 +135,14 @@ const setJsonToStorage = function (key, json) {
 
 // init models
 class Board {
-  constructor(id, title, bgColor) {
+  constructor ({ id, title, bgColor }) {
     this.id = id || stor.getBoards().length + 1
     this.title = title || ''
     this.bgColor = bgColor || '#0079BF' // 'rgb(0, 121, 191)'
   }
 }
 class List {
-  constructor({
-    id,
-    title,
-    pos,
-    boardId
-  }) {
+  constructor ({ id, title, pos, boardId }) {
     this.id = id || stor.getLists().length + 1
     this.title = title || ''
     this.pos = pos || 65535
@@ -155,18 +150,12 @@ class List {
   }
 }
 class Card {
-  constructor({
-    id,
-    key,
-    value,
-    pos,
-    listId
-  }) {
-    this.id = id ? id : stor.getCards().length + 1
-    this.key = key ? key : '',
-      this.value = value ? value : '',
-      this.pos = pos ? pos : 65535
-    this.listId = listId ? listId : 1
+  constructor ({ id, key, value, pos, listId }) {
+    this.id = id || stor.getCards().length + 1
+    this.key = key || ''
+    this.value = value || ''
+    this.pos = pos || 65535
+    this.listId = listId || 1
   }
 }
 

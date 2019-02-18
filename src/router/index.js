@@ -1,12 +1,10 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../components/Home.vue'
-import Login from '../components/Login.vue'
 import Board from '../components/Board.vue'
 import Card from '../components/Card.vue'
 import NotFound from '../components/NotFound.vue'
 import ExcelTemplate from '../components/ExcelTemplate.vue'
-import store from '../store'
 
 // 미들웨어 설정
 Vue.use(VueRouter)

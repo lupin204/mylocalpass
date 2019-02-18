@@ -6,7 +6,7 @@ import mutations from './mutations'
 import actions from './actions'
 
 // 미들웨어 설정
-Vue.use(Vuex);
+Vue.use(Vuex)
 
 /*
 const store1 = new Vuex.Store({
@@ -25,10 +25,10 @@ App.vue --(dispatch)--> actions --(commit)--> mutations --(change)--> state
 */
 
 const store = new Vuex.Store({
-    state,
-    getters,
-    mutations,
-    actions
+  state,
+  getters,
+  mutations,
+  actions
 })
 
 // const { accessToken } = localStorage
