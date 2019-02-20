@@ -1,7 +1,7 @@
 <template>
   <div id="app">
       <Navbar />
-      <router-view class="container" />
+        <router-view class="container" />
   </div>
 </template>
 
@@ -36,7 +36,7 @@ html, body, #app {
   border: none;
   display: inline-block;
   color: #fff;
-  font-size: 14px;
+  font-size: 11px;
   line-height: 20px;  
   font-weight: 700;
   cursor: pointer;
@@ -59,7 +59,7 @@ html, body, #app {
 input[type=text].form-control,
 input[type=password].form-control,
 textarea.form-control {
-  font-size: 14px;
+  font-size: 11px;
 }
 .form-control:focus {
   background-color: #fff;

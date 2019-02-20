@@ -1,10 +1,10 @@
 <template>
   <modal>
     <div slot="header">
-      <h2>
+      <h5>
         Create new card
         <a href="" class="modal-default-button" @click.prevent="onCloseAddCard">&times;</a>
-      </h2>
+      </h5>
     </div>
     <div slot="body">
       <form id="add-card-form" @submit.prevent="onSubmitNewCard" >
@@ -105,10 +105,13 @@ export default {
   vertical-align: middle;
   text-decoration: none;
   color: #888;
-  font-size: 24px;
+  font-size: 18px;
 }
 .add-card .cancel-add-btn:hover,
 .add-card .cancel-add-btn:focus {
   color: #666;
+}
+.label {
+  margin: 0;
 }
 </style>

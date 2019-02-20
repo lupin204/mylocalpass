@@ -1,10 +1,10 @@
 <template>
   <modal>
     <div slot="header">
-      <h2>
+      <h5>
         Create new board
         <a href="" class="modal-default-button" @click.prevent="onCloseAddBoard">&times;</a>
-      </h2>
+      </h5>
     </div>
     <div slot="body">
       <form id="add-board-form" @submit.prevent="onSubmitCreateBoard">

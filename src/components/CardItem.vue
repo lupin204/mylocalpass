@@ -1,8 +1,7 @@
 <template>
   <div class="card-item" :data-card-id="card.id" :data-card-pos="card.pos">
     <router-link :to="`/board/${boardId}/card/${card.id}`">
-      <div class="">{{card.key}}</div>
-      <div class="">{{card.value}}</div>
+      <div class="card-item-value">{{card.key}}</div>
       <div v-if="card.description" class="card-item-meta" >&equiv;</div>
     </router-link>
     <a class="delete-card-btn" href="" @click.prevent="onClickDelete">&times;</a>
@@ -34,8 +33,8 @@ export default {
 .card-item {
   background-color: #fff;
   border-radius: 3px;
-  margin: 8px;
-  padding: 6px 20px 2px 8px;
+  margin: 5px;
+  padding: 3px 10px 1px 4px;
   box-shadow: 0 1px 0 #ccc;
   position: relative;
 }
@@ -52,8 +51,11 @@ export default {
   background-color: rgba(0,0,0, .1);
   cursor: pointer;
 }
+.card-item-value {
+  font-size: 14px;
+}
 .card-item-meta {
-  font-size: 26px;
+  font-size: 18px;
   padding: 5px 0 0 3px;
   color: #8c8c8c;
 }
@@ -62,7 +64,7 @@ export default {
   right: 10px;
   top: 4px;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 15px;
   color: #aaa;
 }
 </style>

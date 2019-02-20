@@ -52,7 +52,7 @@ export default {
 .header {
   flex: none;
   background-color: rgba(0, 0, 0, 0.15);
-  height: 32px;
+  height: 40px;
   padding: 4px;
 }
 .header a {
@@ -69,7 +69,7 @@ export default {
   margin-left: -30px;
   text-align: center;
   font-weight: bolder;
-  font-size: 24px;
+  font-size: 18px;
 }
 .header-logo a:hover,
 .header-logo a:focus {
@@ -80,6 +80,7 @@ export default {
   right: 15px;
   top: 5px;
 }
+/* top-right button
 .header-auth a {
   border-radius: 2px;
   padding: 0 10px;
@@ -91,5 +92,6 @@ export default {
 .header-auth a:focus {
   background-color: rgba(255, 255, 255, 0.3);
 }
+*/
 </style>
         

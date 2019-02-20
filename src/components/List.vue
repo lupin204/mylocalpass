@@ -103,12 +103,11 @@ export default {
 }
 .list-header {
   flex: 0 0 auto;
-  height: 30px;
-  padding: 10px 8px 8px;
+  padding: 5px 4px 4px;
   position: relative;
 }
 .list-header-title {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 700;
   padding-left: 8px;
   line-height: 30px;
@@ -122,7 +121,7 @@ export default {
   top: 8px;
   text-decoration: none;
   color: #aaa;
-  font-size: 24px;
+  font-size: 18px;
 }
 .card-list {
   flex: 1 1 auto;
@@ -136,7 +135,7 @@ export default {
 .add-card-btn {
   flex: 0 0 auto;
   display: block;
-  padding: 8px 10px;
+  padding: 4px 5px;
   color: #8c8c8c;
   text-decoration: none;
 }

@@ -6,22 +6,13 @@
     </div>
 
     <div slot="body">
-      <h4>Key</h4>
+      <label>Key</label>
       <input class="form-control" type="text" :value="card.key" ref="inputKey">
-      <h4>Value</h4>
+      <label>Value</label>
       <input class="form-control" type="text" :value="card.value" ref="inputValue">
-      <!-- <h4>Key</h4>
-      <input class="form-control" type="text" :value="card.key" :readonly="!toggleKey" 
-      @click.prevent="toggleKey=!toggleKey" @blur="onBlurInputKey" ref="inputKey">
-      <h4>Value</h4>
-      <input class="form-control" type="text" :value="card.value" :readonly="!toggleValue" 
-      @click.prevent="toggleValue=!toggleValue" @blur="onBlurInputValue" ref="inputValue"> -->
-      <!-- <textarea class="form-control" cols="30" rows="3" placeholder="Add a more detailed description..."
-      :readonly="!toggleDesc" @click.prevent="toggleDesc=!toggleDesc" @blur="onBlurInputDesc"
-      v-model="card.description" ref="inputDesc"></textarea> -->
     </div>
     <div slot="footer">
-      <a class="btn btn-success" @click.prevent="onClickSubmitCard">submit</a>
+      <a class="btn" @click.prevent="onClickSubmitCard">submit</a>
     </div>
   </Modal>
 </template>
@@ -94,7 +85,7 @@ export default {
   position: absolute;
   top: 0px;
   right: 0px;
-  font-size: 24px;
+  font-size: 18px;
   text-decoration: none;
 }
 .modal-card-header {

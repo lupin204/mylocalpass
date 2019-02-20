@@ -48,9 +48,9 @@ export default {
 }
 
 .modal-container {
-  width: 300px;
+  width: 80%;
   margin: 0px auto;
-  padding: 20px 30px;
+  padding: 5px 10px;
   background-color: #fff;
   border-radius: 2px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
@@ -58,17 +58,26 @@ export default {
   font-family: Helvetica, Arial, sans-serif;
 }
 
-.modal-header h3 {
+.modal-header {
+  padding: 0.5rem
+}
+.modal-header h5 {
   margin-top: 0;
   color: #42b983;
 }
 
 .modal-body {
-  margin: 20px 0;
+  margin: 0px 0;
+  padding: 0.5rem;
+}
+
+.modal-footer {
+  padding: 0.5rem
 }
 
 .modal-default-button {
   float: right;
+  margin-left: 10px;
 }
 
 /*

@@ -80,7 +80,7 @@ export default {
   border-bottom: #bbb solid 1px;
 }
 .header-title {
-  font-size: 18px;
+  font-size: 15px;
   text-align: center;
   line-height: 46px;
   font-weight: 700;
@@ -90,7 +90,7 @@ export default {
   top: 10px;
   right: 10px;
   text-decoration: none;
-  font-size: 24px;
+  font-size: 18px;
   color: #999;
 }
 .menu-list {
@@ -98,12 +98,11 @@ export default {
   padding-left: 0px;
 }
 .menu-list li {
-  height: 18px;
   line-height: 18px;
   padding: 10px;
   margin: 5px;
   border-radius: 3px;
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 700;
   color: #111;
   margin-bottom: 5px;

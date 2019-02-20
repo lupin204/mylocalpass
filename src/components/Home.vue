@@ -56,7 +56,7 @@ export default {
 <style>
 .home-title {
   padding: 10px;
-  font-size: 18px;
+  font-size: 15px;
   font-weight: bold;
 }
 .board-list {
@@ -83,7 +83,7 @@ export default {
 }
 .board-item-title {
   color: #fff;
-  font-size: 18px;
+  font-size: 12px;
   font-weight: 700;
   padding: 10px;
 }

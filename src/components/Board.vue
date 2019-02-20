@@ -30,7 +30,6 @@ import { mapState, mapGetters, mapMutations, mapActions } from 'vuex'
 import List from './List.vue'
 import AddList from './AddList.vue'
 import BoardSettings from './BoardSettings.vue'
-import dragger from '../utils/dragger'
 import dragula from 'dragula'
 import 'dragula/dist/dragula.css'
 
@@ -212,6 +211,7 @@ export default {
   margin: 0;
   height: 32px;
   line-height: 32px;
+  margin-bottom: 10px;
 }
 .board-header input[type=text] {
   width: 200px;
@@ -231,10 +231,10 @@ export default {
 }
 .board-title {
   font-weight: 700;
-  font-size: 18px;
+  font-size: 15px;
 }
 .show-menu {
-  font-size: 14px;
+  font-size: 11px;
   position: absolute;
   right: 15px;
 }
