@@ -63,4 +63,8 @@ export default {
   background-color: rgba(0, 0, 0, 0.3);
   cursor: pointer;
 }
+.add-list a {
+  text-decoration: none;
+  color: inherit;
+}
 </style>
